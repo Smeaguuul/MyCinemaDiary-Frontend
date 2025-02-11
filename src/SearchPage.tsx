@@ -31,7 +31,7 @@ function SearchPage() {
     return (
       <>
         <SearchTextField search={fetchMovies} />
-        <div>Loading...</div>
+        <div>dsfsfsfs...</div>
       </>
     );
   }
@@ -39,16 +39,6 @@ function SearchPage() {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
-  return (
-    <div className="min-h-screen bg-purple-950 p-4">
-      <h1 className="text-2xl font-bold text-center mb-4 bg-blend-color">
-        Movie Search Results
-      </h1>
-      <SearchTextField search={fetchMovies} />
-      <MovieList movies={movies} />
-    </div>
-  );
 }
 
 export default SearchPage;

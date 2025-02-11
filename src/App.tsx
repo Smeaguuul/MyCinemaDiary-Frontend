@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Homepage from "./Components/Homepage/Homepage";
-import SearchPage from "./SearchPage";
+import SearchPage from "./Components/Searchpage/Searchpage";
 
 const Home = () => <Homepage />;
 const Search = () => <SearchPage />;
