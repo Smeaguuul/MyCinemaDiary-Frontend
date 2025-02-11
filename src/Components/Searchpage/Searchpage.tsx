@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { searchMovies } from "../../services/APIService";
+import { searchMovies, addMovie } from "../../services/APIService";
 import { Movie } from "../MovieLogic";
 import SearchTextField from "./SearchTextField";
 import MovieList from "../MovieList";
@@ -22,7 +22,6 @@ function SearchPage() {
   const fetchMovies = async (movieTitle: string) => {
     try {
       if (!movieTitle) movieTitle = "lord of the rings";
-      console.log(movieTitle);
       const data = await searchMovies(movieTitle, 3);
       setMovies(data);
       setMovie(data[0]);
@@ -65,7 +64,7 @@ function SearchPage() {
           movies={movies}
           selectMovieFuncProvider={(movie: Movie) => () => setMovie(movie)}
         />
-        <MovieShowcase movie={movie} onAddMovie={() => 0} />
+        <MovieShowcase movie={movie} onAddMovie={addMovie} />
       </div>
     </div>
   );

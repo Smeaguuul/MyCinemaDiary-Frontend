@@ -6,7 +6,6 @@ interface Props {
 }
 
 const MovieResult = ({ movie, onClick }: Props) => {
-  console.log(movie);
   return (
     <div onClick={onClick} className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-800 m-4 text-white flex h-fit">
       <img

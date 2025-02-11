@@ -2,7 +2,7 @@ import { Movie } from "../MovieLogic";
 
 interface Props {
   movie: Movie | undefined;
-  onAddMovie: () => void;
+  onAddMovie: (movie: Movie) => void;
 }
 
 const MovieShowcase = ({ movie, onAddMovie }: Props) => {
@@ -47,8 +47,8 @@ const MovieShowcase = ({ movie, onAddMovie }: Props) => {
             </span>
           </div>
           <button
-            onClick={onAddMovie}
-            className="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded items-end"
+            onClick={() => onAddMovie(movie)}
+            className="mt-4 py-2 px-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Add Movie
           </button>
