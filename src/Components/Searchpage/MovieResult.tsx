@@ -1,10 +1,11 @@
-import { Movie } from "./MovieLogic";
+import { Movie } from "../MovieLogic";
 
 interface Props {
   movie: Movie;
 }
 
 const MovieResult = ({ movie }: Props) => {
+  console.log(movie)
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-800 m-4 text-white">
       <img
