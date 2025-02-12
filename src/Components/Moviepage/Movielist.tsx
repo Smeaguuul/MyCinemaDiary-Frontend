@@ -10,7 +10,7 @@ const Movielist = ({ movies, loading }: Props) => {
   return (
     <div className="flex flex-wrap items-start h-200">
       {loading
-        ? Array.from({ length: 13 }).map((_, index) => (
+        ? Array.from({ length: 25 }).map((_, index) => (
             <MovieThumbnailSkeleton key={index} />
           ))
         : movies.map((movie) => (

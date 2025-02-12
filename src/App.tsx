@@ -3,30 +3,31 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Homepage from "./Components/Homepage/Homepage";
 import SearchPage from "./Components/Searchpage/Searchpage";
 import Moviepage from "./Components/Moviepage/Moviepage";
+import DiaryEntryPage from "./Components/DiaryEntryPage/DiaryEntryPage";
 
 const Home = () => <Homepage />;
-const Search = () => <SearchPage />;
+const DiaryEntries = () => <DiaryEntryPage />;
 const Movies = () => <Moviepage />;
-const Contact = () => <div className="p-4">Contact Page</div>;
+const AddMovies = () => <SearchPage />;
 const FAQ = () => <div className="p-4">FAQ Page</div>;
 
 const App = () => {
   const sidebarItems = [
     { to: '/', label: 'Home' },
-    { to: '/search', label: 'Search' },
+    { to: '/entries', label: 'Your Diary Entries' },
     { to: '/movies', label: 'Movies' },
-    { to: '/contact', label: 'Contact' },
+    { to: '/addMovies', label: 'Add Movies' },
     { to: '/faq', label: 'FAQ' },
   ];
   return (
     <Router>
-      <div className="flex h-screen w-screen">
+      <div className="flex h-screen w-screen max-w-screen max-h-screen">
         <Sidebar  items={sidebarItems}/>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
+            <Route path="/entries" element={<DiaryEntries />} />
             <Route path="/movies" element={<Movies />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/addMovies" element={<AddMovies />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
       </div>

@@ -1,10 +1,5 @@
-import {
-  IconSortAscending,
-  IconSortDescending,
-  IconChevronDown,
-  IconChevronUp,
-} from "@tabler/icons-react";
 import { useState } from "react";
+import { FaSort } from 'react-icons/fa';
 
 interface Props {
   onSort: (criteria: string, ascending: boolean) => void;
@@ -24,10 +19,11 @@ const MovieSorter = ({ onSort }: Props) => {
         onClick={() => setIsOpen(!isOpen)}
         className="inline-flex justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-purple-700 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
+        <FaSort className="mr-2" size={16} /> {/* Sort Icon */}
         Sort By
       </button>
       {isOpen && (
-        <div className="absolute right-0 z-10 mt-2 w-48 rounded-md shadow-lg bg-purple-800 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-purple-800 ring-1 ring-black ring-opacity-5">
           <ul
             className="py-1"
             role="menu"
@@ -38,7 +34,7 @@ const MovieSorter = ({ onSort }: Props) => {
               onClick={() => handleSort("country")}
               className="block px-4 py-2 text-sm text-white hover:bg-purple-700 cursor-pointer"
             >
-              Contry of Origin
+              Country of Origin
             </li>
             <li
               onClick={() => handleSort("year")}

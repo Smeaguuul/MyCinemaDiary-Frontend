@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { IconSearch, IconReload } from "@tabler/icons-react";
+import { FaRedo } from "react-icons/fa"; // Seperate imports necessary to prevent slowing down loading
+import { FaSearch } from "react-icons/fa"; // If not seperated all icons will be loaded.
 
 interface Props {
   onSearch: (title: string) => void;
@@ -21,18 +22,18 @@ const SearchBar = ({ onSearch, onRedo }: Props) => {
         />
         <button
           onClick={() => onSearch(searchTerm)}
-          className="bg-purple-600 text-white px-4 py-2 rounded-r-lg hover:bg-purple-700 transition duration-200"
+          className="bg-purple-600 text-white px-4 py-2 rounded-r-lg hover:bg-purple-700 transition duration-200 flex items-center"
         >
-          <IconSearch size={20} /> {/* Search icon */}
+          <FaSearch size={20} /> {/* Search Icon */}
         </button>
         <button
-            onClick={() => {
-                onRedo();
-                setSearchTerm("");
-            }}
+          onClick={() => {
+            onRedo();
+            setSearchTerm("");
+          }}
           className="bg-gray-600 text-white px-4 py-2 rounded-r-lg hover:bg-gray-700 transition duration-200 ml-2 flex items-center"
         >
-          <IconReload size={20} /> {/* Reload icon */}
+          <FaRedo size={20} /> {/* Reload Icon */}
         </button>
       </div>
     </div>

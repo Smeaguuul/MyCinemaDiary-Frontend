@@ -47,14 +47,14 @@ const Moviepage = () => {
   
   return (
     <div
-      className="h-full w-full bg-cover bg-center overflow-hidden"
+      className="h-full w-full bg-cover bg-center"
       style={{ backgroundImage: "url('/purple-background.jpg')" }}
     >
-      <div className="absolute z-10 w-full bg-gray-50/20 backdrop-blur-md flex flex-row">
-        <SearchBar onSearch={(filterMovies)} onRedo={fetchMovies} />
+      <div className="relative z-50 bg-gray-50/20 backdrop-blur-md flex flex-row justify-end">
+        <SearchBar onSearch={filterMovies} onRedo={fetchMovies} />
         <MovieSorter onSort={sortMovies} />
       </div>
-      <div className="relative z-0">
+      <div className="fixed z-0">
       <Movielist movies={movies} loading={loading} />
       </div>
     </div>

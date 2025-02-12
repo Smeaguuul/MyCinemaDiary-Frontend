@@ -8,7 +8,7 @@ const SearchTextField = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Update the URL with the search query
-    navigate(`/search?query=${encodeURIComponent(query)}`);
+    navigate(`/addMovies?query=${encodeURIComponent(query)}`);
   };
 
   return (
