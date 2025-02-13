@@ -1,7 +1,14 @@
 import { Movie } from "../Components/MovieLogic";
 
 export async function searchMovies(title : string, limit : number) : Promise<Movie[]> {
-    var res = await fetch(`/api/moviesearch/?query=${title.replace(/ /g, '+')}&limit=${limit}`);
+    const token = localStorage.getItem('token'); // Retrieve the token
+    var res = await fetch(`/api/moviesearch/?query=${title.replace(/ /g, '+')}&limit=${limit}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
     var movies = await res.json();
     return movies;
 }
