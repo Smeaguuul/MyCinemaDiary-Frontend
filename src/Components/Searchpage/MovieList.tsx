@@ -1,5 +1,5 @@
 import React from "react";
-import { Movie } from "../MovieLogic";
+import { Movie } from "../LogicClasses";
 import MovieResult from "./MovieResult";
 import MovieResultSkeleton from "./MovieResultSkeleton";
 

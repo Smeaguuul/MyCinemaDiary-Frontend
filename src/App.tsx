@@ -6,9 +6,11 @@ import Moviepage from "./Components/Moviepage/Moviepage";
 import DiaryEntryPage from "./Components/DiaryEntryPage/DiaryEntryPage";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import { isTokenValid } from "./services/AuthService";
+import AddEntry from "./Components/DiaryEntryPage/AddEntry/AddEntry";
 
 const Home = () => <Homepage />;
 const DiaryEntries = () => <DiaryEntryPage />;
+const AddEntryPage = () => <AddEntry />
 const Movies = () => <Moviepage />;
 const AddMovies = () => <SearchPage />;
 const FAQ = () => <div className="p-4">FAQ Page</div>;
@@ -32,6 +34,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/entries" element={<DiaryEntries />} />
+            <Route path="/entries/add" element={<AddEntryPage />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/addMovies" element={<AddMovies />} />
             <Route path="/faq" element={<FAQ />} />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Movie } from "../MovieLogic";
+import { Movie } from "../LogicClasses";
 import { getMovies } from "../../services/APIService";
 import Movielist from "./Movielist";
 import SearchBar from "./SearchBar";
@@ -13,9 +13,9 @@ const Moviepage = () => {
   const filterMovies = (title: string) => {
     setMovies(movies.filter((movie) => movie.name.includes(title)));
   };
-  
+
   const sortMovies = (type: string, ascending: boolean) => {
-    console.log('Sorting');
+    console.log("Sorting");
     const sortedMovies = [...movies].sort((a, b) => {
       let number = 0;
       if (type === "year" || type === "id") {
@@ -25,10 +25,10 @@ const Moviepage = () => {
       }
       return ascending ? number : number * -1;
     });
-    
+
     setMovies(sortedMovies);
   };
-  
+
   const fetchMovies = async () => {
     try {
       const data = await getMovies();
@@ -40,11 +40,11 @@ const Moviepage = () => {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     fetchMovies();
   }, []);
-  
+
   return (
     <div
       className="h-full w-full bg-cover bg-center"
@@ -55,7 +55,7 @@ const Moviepage = () => {
         <MovieSorter onSort={sortMovies} />
       </div>
       <div className="fixed z-0">
-      <Movielist movies={movies} loading={loading} />
+        <Movielist movies={movies} loading={loading} />
       </div>
     </div>
   );

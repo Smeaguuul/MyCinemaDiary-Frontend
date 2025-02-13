@@ -1,4 +1,4 @@
-import { Movie } from "../MovieLogic";
+import { Movie } from "../LogicClasses";
 import MovieThumbnail from "./MovieThumbnail";
 import MovieThumbnailSkeleton from "./MovieThumbnailSkeleton";
 

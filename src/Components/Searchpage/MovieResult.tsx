@@ -1,13 +1,16 @@
-import { Movie } from "../MovieLogic";
+import { Movie } from "../LogicClasses";
 
 interface Props {
   movie: Movie;
-  onClick : () => void;
+  onClick: () => void;
 }
 
 const MovieResult = ({ movie, onClick }: Props) => {
   return (
-    <div onClick={onClick} className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-800 m-4 text-white flex h-fit">
+    <div
+      onClick={onClick}
+      className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-800 m-4 text-white flex h-fit"
+    >
       <img
         className="max-w-40 h-full object-cover"
         src={movie.thumbnail}

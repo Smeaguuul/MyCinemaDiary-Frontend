@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { searchMovies, addMovie } from "../../services/APIService";
-import { Movie } from "../MovieLogic";
+import { Movie } from "../LogicClasses";
 import SearchTextField from "./SearchTextField";
 import MovieList from "./MovieList";
 import MovieShowcase from "./MovieShowcase";
