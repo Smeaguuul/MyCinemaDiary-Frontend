@@ -38,4 +38,4 @@
 ---
 
 ## Summary
-The MyCinemaDiary Frontend provides a comprehensive interface for managing your cinema activities, from logging in to adding and viewing movies. The application is designed to be intuitive and user-friendly, ensuring a smooth experience for all users.
+The MyCinemaDiary Frontend provides a comprehensive interface for managing your cinema activities, from logging in to adding and viewing movies.
