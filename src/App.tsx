@@ -13,7 +13,6 @@ const DiaryEntries = () => <DiaryEntryPage />;
 const AddEntryPage = () => <AddEntry />
 const Movies = () => <Moviepage />;
 const AddMovies = () => <SearchPage />;
-const FAQ = () => <div className="p-4">FAQ Page</div>;
 
 const App = () => {
   const sidebarItems = [
@@ -21,7 +20,6 @@ const App = () => {
     { to: "/entries", label: "Your Diary Entries" },
     { to: "/movies", label: "Movies" },
     { to: "/addMovies", label: "Add Movies" },
-    { to: "/faq", label: "FAQ" },
   ];
 //            <Route path="/login" element={<Login />} />
   var authorized = isTokenValid();
@@ -37,7 +35,6 @@ const App = () => {
             <Route path="/entries/add" element={<AddEntryPage />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/addMovies" element={<AddMovies />} />
-            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </div>
       </Router>
