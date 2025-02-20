@@ -31,7 +31,7 @@
 
 ### 5. Add Movie Page
 - **Description**: A dedicated page for adding new movies to your collection.
-- **Functionality**: Users can input movie details and submit them to be added to their list.
+- **Functionality**: Users search for movies, and info is automatically fetched from [TVDB](thetvdb.com).
 - **Image**: ![image](https://github.com/user-attachments/assets/f9fa04df-b611-4cc6-8ff3-f1b20e01187e)
 
 
