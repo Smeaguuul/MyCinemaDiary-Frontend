@@ -60,7 +60,6 @@ export class Movie {
 }
 
 export interface DiaryEntry {
-  id: number;
   title: string;
   review: string;
   rating: number;
