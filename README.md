@@ -3,14 +3,14 @@
 ### 1. Login Page
 - **Description**: The entry point of the application where users can log in to access their account.
 - **Functionality**: The application handles all login requests and stores JWT tokens locally for secure access.
-- **Image**: [image](https://github.com/user-attachments/assets/0717c7d1-de46-4a55-a156-f9efe7ed5945)
+- **Image**: ![image](https://github.com/user-attachments/assets/0717c7d1-de46-4a55-a156-f9efe7ed5945)
 
 ---
 
 ### 2. Homepage
 - **Description**: Provides an overview of your activities, including recent entries and statistics.
 - **Functionality**: Users can quickly see their latest activities and navigate to other sections of the application. (To be added)
-- **Image**:! ![image](https://github.com/user-attachments/assets/6d1b4718-18d6-4054-9068-9c80df6cea15)
+- **Image**: ![image](https://github.com/user-attachments/assets/6d1b4718-18d6-4054-9068-9c80df6cea15)
 
 
 ---
