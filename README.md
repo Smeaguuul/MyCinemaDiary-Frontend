@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+## Pages Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 1. Login Page
+- **Description**: The entry point of the application where users can log in to access their account.
+- **Functionality**: The application handles all login requests and stores JWT tokens locally for secure access.
+- **Image**: ![Login Page](https://via.placeholder.com/600x400?text=Login+Page)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. Homepage
+- **Description**: Provides an overview of your activities, including recent entries and statistics.
+- **Functionality**: Users can quickly see their latest activities and navigate to other sections of the application.
+- **Image**: ![Homepage](https://via.placeholder.com/600x400?text=Homepage)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 3. Entries Overview
+- **Description**: Displays a list of all your entries with options to add more.
+- **Functionality**: Users can view existing entries and click a button to add new entries.
+- **Image**: ![Entries Overview](https://via.placeholder.com/600x400?text=Entries+Overview)
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 4. Movies List
+- **Description**: Shows a comprehensive list of all currently added movies.
+- **Functionality**: Users can browse through their movie collection and access details for each movie.
+- **Image**: ![Movies List](https://via.placeholder.com/600x400?text=Movies+List)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 5. Add Movie Page
+- **Description**: A dedicated page for adding new movies to your collection.
+- **Functionality**: Users can input movie details and submit them to be added to their list.
+- **Image**: ![Add Movie Page](https://via.placeholder.com/600x400?text=Add+Movie+Page)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## Summary
+The MyCinemaDiary Frontend provides a comprehensive interface for managing your cinema activities, from logging in to adding and viewing movies. The application is designed to be intuitive and user-friendly, ensuring a smooth experience for all users.
