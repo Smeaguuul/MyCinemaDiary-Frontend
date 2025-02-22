@@ -1,4 +1,3 @@
-import React from "react";
 import DiaryEntryCard from "./DiaryEntryCard";
 import { DiaryEntry } from "../LogicClasses";
 import { useNavigate } from "react-router-dom";
@@ -24,8 +23,8 @@ function DiaryEntryTimeline({ entries }: Props) {
         <div key={date} className="bg-gradient-to-r from-purple-800 to-purple-900 p-1 rounded-lg shadow-md mb-4">
           <h2 className="text-lg font-bold text-gray-100">{date}</h2>
           <div className="flex flex-col">
-            {groupedEntries[date].map((entry) => (
-              <DiaryEntryCard key={entry.id} entry={entry} />
+            {groupedEntries[date].map((entry, index) => (
+              <DiaryEntryCard key={index} entry={entry} />
             ))}
           </div>
         </div>
