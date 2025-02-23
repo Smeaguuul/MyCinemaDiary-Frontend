@@ -1,7 +1,7 @@
-import React from "react";
-import { Movie } from "../LogicClasses";
-import MovieResult from "./MovieResult";
-import MovieResultSkeleton from "./MovieResultSkeleton";
+import React from 'react';
+import { Movie } from '../LogicClasses';
+import MovieResult from './MovieResult';
+import MovieResultSkeleton from './MovieResultSkeleton';
 
 interface Props {
   movies: Movie[] | null;
@@ -24,8 +24,8 @@ function MovieList({ movies, selectMovieFuncProvider }: Props) {
   }
 
   return (
-    <div className="flex flex-col items-start w-full max-w-md overflow-y-auto">
-      {movies.map((movie) => (
+    <div className="flex flex-col h-full overflow-y-auto ">
+      {movies.map(movie => (
         <MovieResult
           key={movie.imdbId}
           movie={movie}

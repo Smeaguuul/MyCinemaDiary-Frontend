@@ -18,19 +18,26 @@ function DiaryEntryTimeline({ entries }: Props) {
   }, {} as { [date: string]: DiaryEntry[] });
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-4 p-4 max-h-screen overflow-y-auto">
       {Object.keys(groupedEntries).map((date) => (
-        <div key={date} className="bg-gradient-to-r from-purple-800 to-purple-900 p-1 rounded-lg shadow-md mb-4">
-          <h2 className="text-lg font-bold text-gray-100">{date}</h2>
-          <div className="flex flex-col">
+        <div key={date} className="bg-gradient-to-r from-purple-800 to-purple-900 p-4 rounded-lg shadow-md">
+          <h2 className="text-lg font-bold text-gray-100 mb-2">{date}</h2>
+          <div className="flex flex-wrap justify-start">
             {groupedEntries[date].map((entry, index) => (
-              <DiaryEntryCard key={index} entry={entry} />
+              <div key={index} className="flex-1 min-w-[200px]">
+                <DiaryEntryCard entry={entry} />
+              </div>
             ))}
           </div>
         </div>
       ))}
 
-      <button onClick={() => navigate(`/entries/add`)} > Add Entry </button>
+      <button
+        onClick={() => navigate(`/entries/add`)}
+        className="mt-4 bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600 transition"
+      >
+        Add Entry
+      </button>
     </div>
   );
 }

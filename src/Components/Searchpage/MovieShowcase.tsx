@@ -8,10 +8,10 @@ interface Props {
 const MovieShowcase = ({ movie, onAddMovie }: Props) => {
   if (movie == undefined) return <div></div>;
   return (
-    <div className="p-4 w-fit">
+    <div className="p-4 max-w-[65lvh]">
       <h1 className="text-2xl font-bold mb-4">{movie.name}</h1>
       <div className="flex">
-        <div className="w-1/3">
+        <div className="w-1/2">
           <div className="aspect-[0.68]">
             <img
               className="w-full h-full object-cover"

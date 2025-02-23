@@ -24,7 +24,7 @@ const DiaryEntryPage = () => {
     fetchEntries();
   }, []);
   return (
-    <div className="bg-gray-900 p-4">
+    <div className="bg-gray-900">
       <DiaryEntryTimeline entries={entries} />
     </div>
   );

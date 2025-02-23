@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { searchMovies, addMovie } from "../../services/APIService";
-import { Movie } from "../LogicClasses";
-import SearchTextField from "./SearchTextField";
-import MovieList from "./MovieList";
-import MovieShowcase from "./MovieShowcase";
-import { useLocation } from "react-router-dom";
-import MovieShowcaseSkeleton from "./MovieShowcaseSkeleton";
-import SearchBar from "./SearchBar";
+import { useEffect, useState } from 'react';
+import { searchMovies, addMovie } from '../../services/APIService';
+import { Movie } from '../LogicClasses';
+import SearchTextField from './SearchTextField';
+import MovieList from './MovieList';
+import MovieShowcase from './MovieShowcase';
+import { useLocation } from 'react-router-dom';
+import MovieShowcaseSkeleton from './MovieShowcaseSkeleton';
+import SearchBar from './SearchBar';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -19,18 +19,18 @@ function SearchPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  var query = useQuery().get("query");
+  var query = useQuery().get('query');
   //Fetching movies
   const fetchMovies = async (movieTitle: string) => {
     try {
-      if (!movieTitle) movieTitle = "lord of the rings";
-      const data = await searchMovies(movieTitle, 5);
+      if (!movieTitle) movieTitle = 'lord of the rings';
+      const data = await searchMovies(movieTitle, 10);
       setMovies(data);
       setMovie(data[0]);
     } catch (error) {
       //Nødt til at checke instance, for at ts ved hvilken type error ér
       if (error instanceof Error) setError(error.message);
-      else console.log("An unknown error occurred");
+      else console.log('An unknown error occurred');
     } finally {
       setLoading(false);
     }
@@ -43,17 +43,17 @@ function SearchPage() {
   }, [query]);
 
   if (query == null) {
-    return <SearchBar />
+    return <SearchBar />;
   }
 
   if (loading) {
     return (
-      <div className="h-full w-full bg-gradient-to-r from-purple-800 via-purple-950 to-purple-600 p-4">
+      <div className="h-full w-full bg-gradient-to-r from-purple-800 via-purple-950 to-purple-600 p-4 flex flex-col">
         <h1 className="text-2xl font-bold text-center mb-4 bg-blend-color">
           Movie Search Results
         </h1>
         <SearchTextField />
-        <div className="flex flex-row">
+        <div className="flex flex-row flex-grow">
           <MovieList
             movies={null}
             selectMovieFuncProvider={(movie: Movie) => () => setMovie(movie)}
