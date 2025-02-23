@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { FaRedo } from "react-icons/fa"; // Seperate imports necessary to prevent slowing down loading
-import { FaSearch } from "react-icons/fa"; // If not seperated all icons will be loaded.
+import { useState } from 'react';
+import { FaRedo } from 'react-icons/fa'; // Seperate imports necessary to prevent slowing down loading
+import { FaSearch } from 'react-icons/fa'; // If not seperated all icons will be loaded.
 
 interface Props {
   onSearch: (title: string) => void;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SearchBar = ({ onSearch, onRedo }: Props) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <div className="flex justify-baseline items-center p-4">
@@ -17,7 +17,7 @@ const SearchBar = ({ onSearch, onRedo }: Props) => {
           type="text"
           placeholder="Search for movies..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}
           className="flex-grow p-2 bg-transparent text-white placeholder-gray-300 rounded-l-lg focus:outline-none"
         />
         <button
@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch, onRedo }: Props) => {
         <button
           onClick={() => {
             onRedo();
-            setSearchTerm("");
+            setSearchTerm('');
           }}
           className="bg-gray-600 text-white px-4 py-2 rounded-r-lg hover:bg-gray-700 transition duration-200 ml-2 flex items-center"
         >

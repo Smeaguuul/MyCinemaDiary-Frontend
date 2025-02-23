@@ -1,4 +1,4 @@
-import { Movie } from "../LogicClasses";
+import { Movie } from '../LogicClasses';
 
 interface Props {
   movie: Movie | undefined;

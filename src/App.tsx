@@ -7,12 +7,14 @@ import DiaryEntryPage from "./Components/DiaryEntryPage/DiaryEntryPage";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import { isTokenValid } from "./services/AuthService";
 import AddEntry from "./Components/DiaryEntryPage/AddEntry/AddEntry";
+import MovieShowcasePage from "./Components/MovieShowcasePage/MovieShowcasePage";
 
 const Home = () => <Homepage />;
 const DiaryEntries = () => <DiaryEntryPage />;
 const AddEntryPage = () => <AddEntry />
 const Movies = () => <Moviepage />;
 const AddMovies = () => <SearchPage />;
+const MovieShowcase = () => <MovieShowcasePage />;
 
 const App = () => {
   const sidebarItems = [
@@ -35,6 +37,7 @@ const App = () => {
             <Route path="/entries/add" element={<AddEntryPage />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/addMovies" element={<AddMovies />} />
+            <Route path="/movie/:id" element={<MovieShowcase />} />
           </Routes>
         </div>
       </Router>

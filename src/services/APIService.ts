@@ -42,6 +42,20 @@ export async function getEntries(): Promise<DiaryEntry[]> {
   return entries;
 }
 
+export async function getEntriesForMovie(movieId : number): Promise<DiaryEntry[]> {
+  console.log("Getting entries ");
+  const token = localStorage.getItem("token");
+  var res = await fetch(`/api/diaryentries?movieId=${movieId}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  var entries = await res.json();
+  return entries;
+}
+
 export async function addMovie(movie: Movie): Promise<void> {
   var res = await fetch(`/api/movies/`, {
     method: "post",
@@ -52,6 +66,12 @@ export async function addMovie(movie: Movie): Promise<void> {
     body: JSON.stringify(movie),
   });
   if (res.status != 201) throw new Error(`Can't add ${movie.extendedTitle}!`);
+}
+
+export async function getMovie(id : number) : Promise<Movie> {
+  var res = await fetch(`/api/movies/movie?id=${id}`);
+  var movie = await res.json();
+  return movie;
 }
 
 export async function addEntry(entry: DiaryEntry) {
@@ -68,10 +88,3 @@ export async function addEntry(entry: DiaryEntry) {
   });
   if (res.status != 201) throw new Error(`Can't add ${entry.title}!`);
 }
-
-// "Rating": 5,
-// "Review": "Wow is this a great movie. I loved it!",
-// "Title": "Must watch film!",
-// "Date": "2024-01-01",
-// "MovieId": 1
-// rating : number, review : string, title: string, date: string, movieId : number

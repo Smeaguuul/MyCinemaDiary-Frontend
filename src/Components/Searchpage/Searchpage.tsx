@@ -6,6 +6,7 @@ import MovieList from "./MovieList";
 import MovieShowcase from "./MovieShowcase";
 import { useLocation } from "react-router-dom";
 import MovieShowcaseSkeleton from "./MovieShowcaseSkeleton";
+import SearchBar from "./SearchBar";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -40,6 +41,10 @@ function SearchPage() {
       fetchMovies(query);
     }
   }, [query]);
+
+  if (query == null) {
+    return <SearchBar />
+  }
 
   if (loading) {
     return (
